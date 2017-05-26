@@ -25,7 +25,7 @@ function getJsonData(){
 	 
     $.getJSON(uri, function (json) { 
        var a=json.temp_min;
-	   var b=json.temp_min;
+	   var b=json.temp_max;
 	   var temp_min=a.toString().slice("",5);
 	   var temp_max=b.toString().slice("",5);
 	   document.getElementById("p1").innerHTML="Timing="+time+"<br>Min temperature= "+temp_max+"<br> Max Temperature="+temp_min;
