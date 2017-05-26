@@ -76,12 +76,8 @@ public class WeatherController {
 	
 	private List<Temperature> temperature;
 	
-	static int count=0;
-	
 	 @Scheduled(fixedRate = 900000)
 	 public void reportCurrentTime() {
-		 count++;
-		 System.out.println("Called in 2 minutes count= "+count);
 		 weatherService.deleteAll();
 		 temperature=task.httpcall();
 		 Iterator itr=temperature.listIterator();
@@ -89,5 +85,4 @@ public class WeatherController {
 			 weatherService.addTemperature((Temperature)itr.next());
 		 }
 	 }
-	 
 }
