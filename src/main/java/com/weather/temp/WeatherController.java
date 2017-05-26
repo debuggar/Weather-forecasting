@@ -25,9 +25,10 @@ public class WeatherController {
 	private WeatherService weatherService;
 	
 	@RequestMapping("/weather")
-	public List<Temperature> getAllTemperature(){
+	public List<Temperature> getAllTemperature() throws java.text.ParseException {
 		return weatherService.getAllTemperature();
 	}
+	
 	
 	@RequestMapping("/weather/{foo}")
 	public Temperature getTemperature(@PathVariable("foo") String id){
